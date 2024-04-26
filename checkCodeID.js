@@ -1,6 +1,3 @@
-// before running this script go to the bottom of the script and add the TC 
-// you want to pass as input to the checkCaseIDs function
-//**************************************
 // Function to check the checkboxes next to specific Case IDs
 function checkCaseIDs(caseIDs) {
   // Split the caseIDs string into an array of IDs
@@ -31,5 +28,19 @@ function checkCaseIDs(caseIDs) {
   });
 }
 
-// Example usage with multiple case IDs
-checkCaseIDs('1998144|2292525|723875|723874|723873|1081495|1412118|895406|2139436|451205|1323353|2178186|2178190|2498244');
+// Function to prompt the user for input and call checkCaseIDs
+function promptAndCheckCaseIDs() {
+  // Prompt the user for input
+  const inputString = prompt("Enter Case IDs separated by '|' (e.g., 1998144|2292525|723875):");
+  
+  // If the user entered a string
+  if (inputString) {
+    // Call the checkCaseIDs function with the entered string
+    checkCaseIDs(inputString);
+  } else {
+    console.log("No input provided. Please enter Case IDs.");
+  }
+}
+
+// Example usage: Call promptAndCheckCaseIDs
+promptAndCheckCaseIDs();
