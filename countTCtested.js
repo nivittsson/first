@@ -75,9 +75,12 @@ function countTestedBy() {
   // Sort the array by the date property
   perTester.sort((a, b) => new Date(a.date) - new Date(b.date));
   console.log("The counts per tester sorted by date are:");
+  let outputMessage = "The counts per tester sorted by date are:\n";
   for (let obj of perTester) {
     console.log(obj.date + " " + obj.tester + " = " + obj.count);
+    outputMessage += obj.date + " " + obj.tester + " = " + obj.count + "\n";
   }
+  alert(outputMessage);
 }
 
 // Invoke the main function
